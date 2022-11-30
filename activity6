@@ -1,0 +1,262 @@
+# 1a. Create a class for a generic object. Here are some ideas: # 1a. Create a class for a generic object. Here are some ideas: Automobile, Student, Food, Customer, Employee
+
+
+
+
+#creating a generic automobile class:
+
+
+
+
+class Automobile():
+
+  Tonys_Car = 'Toyota' #attribute of class 'Automobile' for Tony
+
+  Bros_Car = 'Tesla' #attribute of class 'Automobile' for Tony's brother
+
+
+
+
+  #instances of class
+
+  def __init__(self,make,model,year,color):
+
+      self.make = make
+
+      self.model = model
+
+      self.year = year
+
+      self.color = color
+
+
+
+
+
+
+
+# 1b. Include at least 1 method (besides the __init__ function). Don't forget the docString!!
+
+
+
+
+#method for returning all parameter values as a tuple
+
+
+
+
+  def outputvalues(self):
+
+      vals = (self.make, self.model, self.year, self.color)
+
+      return vals
+
+   
+
+mycar = Automobile('Toyota','Prius', 2020, 'black')
+
+print(mycar.outputvalues())
+
+
+
+
+bros_car = Automobile('Tesla','model Y', 2021, 'white')
+
+print (bros_car.outputvalues())
+
+
+
+
+# 1c. Create at least 1 class attribute.
+
+
+
+
+# 1d. Create at least 1 instance attribute.
+
+
+
+
+# 1e Create TWO different instances of your object of more specific automobiles.
+
+
+
+
+#TWO different instances of my object of more specific automobiles
+
+
+
+
+#Another instance of an automobile/Car class 
+
+myCar2 = Automobile('Nissan','350z', 2004,'silver')
+
+#Second Instance of another specific automobile
+
+myCar3 = Automobile('Infiniti','G35',2005, 'white')
+
+
+
+
+
+
+
+
+
+
+print(myCar2.outputvalues())
+
+
+
+
+print(f" \n Tony daily drives a 2020 {mycar.Tonys_Car} Prius.")
+
+print (f"\n Tony's brother daily drives a 2021 {bros_car.Bros_Car}")
+
+
+
+
+setattr(bros_car, 'Fuel','Electric')
+
+print (f'\nThe Tesla uses this type of fuel: {bros_car.Fuel}')
+
+setattr(myCar2, 'Speakers', 'Premium')
+
+print(f'\nThe Nisssan has these speakers: {myCar2.Speakers}')
+
+
+#2 Convert this function to accept multiple arguments using **kwargs
+
+
+
+
+def Availability(**kwargs):
+
+
+
+
+    for dayOfTheWeek, time in kwargs.items():
+
+      
+
+      print(f"\n You are available on {dayOfTheWeek} for {time}\n")
+
+
+
+
+print("Availability:")
+
+Availability(Monday = "60 minutes", Tuesday = "15 minutes", Wednesday = "2 hours")
+
+#3 Fix the code below so that the new_game() function will change player attributes (job, STR, DEF, AGL, INT, LCK).
+
+
+
+
+class Player:
+
+    def __init__(self):
+
+        self.job = "Onion Knight"
+
+        self.STR = 5
+
+        self.DEF = 5
+
+        self.AGL = 5
+
+        self.INT = 5
+
+        self.LCK = 0
+
+        print("New game initiated. Define player stats:")
+
+
+
+
+###Change code here!###
+
+
+
+
+    def new_game(self,job,STR,DEF,AGL,INT,LCK):
+
+        self.job = job
+
+        self.STR = STR
+
+        self.DEF = DEF
+
+        self.AGL = AGL
+
+        self.INT = INT
+
+        self.LCK = LCK
+
+
+
+
+ ##end change code###
+
+
+
+
+        print("\nNew character created.\n")
+
+        print("\nJob class:\n", self.job)
+
+        print("\nStrength:\n", self.STR)
+
+        print("\nDefense:\n", self.DEF)
+
+        print("\nAgility:\n", self.AGL)
+
+        print("\nIntelligence:\n", self.INT)
+
+        print("\nLuck\n", self.LCK)
+
+
+
+
+
+
+
+
+
+
+player1 = Player()
+
+
+
+
+player1.new_game(job='Grappler', STR=40, DEF=20, AGL=40, INT=10, LCK=5) #fix the function above for this to work!
+
+#4 Create a decorator to enhance this function. You can add any additional feature you want.
+
+
+
+
+def food_order(food="steak"):
+
+
+
+
+  #define function
+
+  def steak(food="yummy"):
+
+      return food.capitalize()+"!"
+
+   
+
+      print(f"Thank you for ordering {food}.")
+
+
+
+
+      print("Your order will be finished in 15 min.")
+
+
+
+
+
